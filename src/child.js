@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "./App";
 
-function Child() {
+function Child({ title }) {
   const { updateData, data } = useContext(DataContext);
 
   const send = () => {
@@ -15,6 +15,7 @@ function Child() {
   return (
     <div>
       <button onClick={send}> Click</button>
+      <h1>{title}</h1>
     </div>
   );
 }

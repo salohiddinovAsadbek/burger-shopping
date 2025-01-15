@@ -1,7 +1,7 @@
 import "./style.css";
 import { createContext, useState } from "react";
-import Child from "./child";
-import { Routes, Route } from "react-dom";
+// import Child from "./child";
+import Header from "./components/header";
 
 export const DataContext = createContext();
 
@@ -14,8 +14,7 @@ function App() {
 
   return (
     <DataContext.Provider value={{ data, updateData }}>
-      <Child />
-      <h1 style={{ backgroundColor: data }}>Hello</h1>
+      <Header />
     </DataContext.Provider>
   );
 }
