@@ -1,5 +1,5 @@
 .basket {
-  /* width: calc(300 / 14.4 * 1vw); */
+  width: calc(300 / 14.4 * 1vw);
   height: min-content;
   padding-top: calc(24 / 14.4 * 1vw);
   padding-left: calc(16 / 14.4 * 1vw);
@@ -105,6 +105,8 @@
 .basketCard > div:last-child > button {
   background-color: inherit;
   border: none;
+  height: 100%;
+  width: calc(12 / 14.4 * 1vw);
 }
 
 .allPrice {

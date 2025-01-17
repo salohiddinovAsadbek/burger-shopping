@@ -4,13 +4,48 @@ import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../App";
 
 function Basket() {
-  const { basket } = useContext(DataContext);
+  const { basket, setBasket } = useContext(DataContext);
   const [lengthProducts, setLengthproducts] = useState(0);
-  const { overallPrice, setOverallPrice } = useState(0);
+  const [overallPrice, setOverall] = useState(0);
 
   useEffect(() => {
-    setLengthproducts(basket.length);
+    if (basket.length > 0) {
+      const total = basket.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+      setOverall(total);
+      const allquantity = basket.reduce((acc, item) => acc + item.quantity, 0);
+      setLengthproducts(allquantity);
+    } else {
+      setLengthproducts(0);
+      setOverall(0);
+    }
   }, [basket]);
+
+  const plus = (raqam) => {
+    setBasket((c) => {
+      const updated = [...c];
+      updated[raqam].quantity += 1;
+      return updated;
+    });
+  };
+
+  const minus = (raqam, qancha) => {
+    if (qancha > 1) {
+      setBasket((c) => {
+        const updated = [...c];
+        updated[raqam].quantity -= 1;
+        return updated;
+      });
+    } else if (qancha === 1) {
+      setBasket((c) => {
+        const updated = [...c];
+        updated.splice(raqam, 1);
+        return updated;
+      });
+    }
+  };
 
   return (
     <div className="basket">
@@ -31,9 +66,11 @@ function Basket() {
                 </p>
               </div>
               <div>
-                <button>-</button>
+                <button onClick={() => minus(index, product.quantity)}>
+                  -
+                </button>
                 <p>{product.quantity}</p>
-                <button>+</button>
+                <button onClick={() => plus(index)}>+</button>
               </div>
             </div>
           );

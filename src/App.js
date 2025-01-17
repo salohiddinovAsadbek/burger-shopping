@@ -77,7 +77,7 @@ function App() {
 
   return (
     <DataContext.Provider
-      value={{ data, updateData, burgerData, addProduct, basket }}
+      value={{ data, updateData, burgerData, addProduct, basket, setBasket }}
     >
       <Header />
       <Navbar />

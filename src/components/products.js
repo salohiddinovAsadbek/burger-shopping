@@ -26,6 +26,7 @@ function Products() {
               <p className="productMassMain">{product.mass}</p>
               <button className="addButtonMain" onClick={() => add(product)}>
                 Добавить
+                <p></p>
               </button>
             </div>
           );

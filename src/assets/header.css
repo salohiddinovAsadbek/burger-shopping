@@ -15,6 +15,15 @@ header > img {
   height: calc(29 / 14.4 * 1vw);
 }
 
+@keyframes animate {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(calc(20 / 14.4 * 1vw));
+  }
+}
+
 .headerWrapper {
   display: flex;
   gap: calc(21 / 14.4 * 1vw);
@@ -24,6 +33,7 @@ header > img {
 .headerWrapper > img {
   width: calc(326 / 14.4 * 1vw);
   height: calc(326 / 14.4 * 1vw);
+  animation: animate 1s infinite alternate linear;
 }
 
 .headerWrapper > div {
@@ -59,6 +69,14 @@ header > img {
 }
 
 @media only screen and (max-width: 1024px) {
+  @keyframes animate {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(calc(20 / 10.24 * 1vw));
+    }
+  }
   header {
     height: calc(466 / 10.24 * 1vw);
     padding-top: calc(22 / 10.24 * 1vw);
@@ -131,6 +149,15 @@ header > img {
 }
 
 @media only screen and (max-width: 320px) {
+  @keyframes animate {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(calc(20 / 3.2 * 1vw));
+    }
+  }
+
   header {
     height: calc(459 / 3.2 * 1vw);
     padding-top: calc(22 / 3.2 * 1vw);
