@@ -1,0 +1,72 @@
+.productCardMain {
+  width: calc(300 / 14.4 * 1vw);
+  height: calc(411 / 14.4 * 1vw);
+  background-color: white;
+  border: none;
+  border-radius: calc(18 / 14.4 * 1vw);
+  padding: calc(12 / 14.4 * 1vw);
+}
+
+.productsWrapperMain {
+  display: flex;
+  gap: calc(30 / 14.4 * 1vw);
+  flex-wrap: wrap;
+}
+
+.productCardMain > img {
+  width: 100%;
+  height: calc(220 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+}
+
+.productPriceMain {
+  font-family: Nunito, sans-serif;
+  font-size: calc(24 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(24 / 14.4 * 1vw);
+  color: black;
+  margin-top: calc(16 / 14.4 * 1vw);
+}
+
+.productTitleMain {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(21 / 14.4 * 1vw);
+  margin-top: calc(8 / 14.4 * 1vw);
+  margin-bottom: calc(29 / 14.4 * 1vw);
+}
+
+.pageTitleMain {
+  font-family: Nunito, sans-serif;
+  font-size: calc(40 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(48 / 14.4 * 1vw);
+  color: black;
+  margin-bottom: calc(24 / 14.4 * 1vw);
+}
+
+.productMassMain {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(21 / 14.4 * 1vw);
+  color: #b1b1b1;
+}
+
+.addButtonMain {
+  width: 100%;
+  height: calc(40 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+  background-color: #f2f2f3;
+  display: flex;
+  justify-content: center;
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: black;
+  align-items: center;
+  border: none;
+  margin-top: calc(8 / 14.4 * 1vw);
+}

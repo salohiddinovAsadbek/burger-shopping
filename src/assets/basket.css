@@ -1,0 +1,163 @@
+.basket {
+  /* width: calc(300 / 14.4 * 1vw); */
+  height: min-content;
+  padding-top: calc(24 / 14.4 * 1vw);
+  padding-left: calc(16 / 14.4 * 1vw);
+  padding-right: calc(16 / 14.4 * 1vw);
+  padding-bottom: calc(24 / 14.4 * 1vw);
+  background-color: white;
+  border-radius: calc(18 / 14.4 * 1vw);
+  margin-top: calc(72 / 14.4 * 1vw);
+}
+
+.basket > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(129 / 14.4 * 1vw);
+}
+
+.basket > div:first-child > h1 {
+  font-family: Nunito, sans-serif;
+  font-size: calc(24 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(24 / 14.4 * 1vw);
+  color: black;
+}
+
+.basket > div:first-child > p {
+  padding: calc(2 / 14.4 * 1vw) calc(17 / 14.4 * 1vw);
+  background-color: #f2f2f3;
+  border-radius: calc(6 / 14.4 * 1vw);
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: black;
+}
+
+.basketWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(12 / 14.4 * 1vw);
+}
+
+.basketCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(15 / 14.4 * 1vw) 0;
+  border-bottom: calc(1 / 14.4 * 1vw) solid #f2f2f3;
+  border-top: calc(1 / 14.4 * 1vw) solid #f2f2f3;
+}
+
+.basketCard > div:first-child {
+  display: flex;
+  gap: calc(6 / 14.4 * 1vw);
+}
+
+.basketCard > div:first-child > img {
+  width: calc(64 / 14.4 * 1vw);
+  height: calc(52 / 14.4 * 1vw);
+  border-radius: calc(8 / 14.4 * 1vw);
+}
+
+.basketCard > div:first-child > p {
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+}
+
+.productMass {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: #b1b1b1;
+  margin-top: calc(1 / 14.4 * 1vw);
+  margin-bottom: calc(6 / 14.4 * 1vw);
+}
+
+.productPrice {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+}
+
+.basketCard > div:last-child {
+  display: flex;
+  padding: calc(9 / 14.4 * 1vw) calc(12 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+  background-color: #f2f2f3;
+  align-items: center;
+  justify-content: center;
+  gap: calc(18 / 14.4 * 1vw);
+  height: calc(40 / 14.4 * 1vw);
+}
+
+.basketCard > div:last-child > button {
+  background-color: inherit;
+  border: none;
+}
+
+.allPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: calc(16 / 14.4 * 1vw);
+  margin-bottom: calc(24 / 14.4 * 1vw);
+}
+
+.allPrice > span:first-child {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(21 / 14.4 * 1vw);
+}
+
+.allPrice > span:last-child {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(21 / 14.4 * 1vw);
+}
+
+.buyButton {
+  width: 100%;
+  height: calc(40 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+  background-color: #ff7020;
+  border: none;
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: #ffffff;
+}
+
+.delivery {
+  display: flex;
+  align-items: center;
+  margin-top: calc(8 / 14.4 * 1vw);
+  gap: calc(8 / 14.4 * 1vw);
+}
+
+.delivery > img {
+  width: calc(24 / 14.4 * 1vw);
+  height: calc(24 / 14.4 * 1vw);
+}
+
+.delivery > p {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: black;
+}
