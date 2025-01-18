@@ -9,6 +9,9 @@ function Basket() {
   const { basket, setBasket } = useContext(DataContext);
   const [lengthProducts, setLengthproducts] = useState(0);
   const [overallPrice, setOverall] = useState(0);
+  const [flex, setFlex] = useState("none");
+  const [width, setWidth] = useState("");
+  const [position, setPosition] = useState("relative");
 
   useEffect(() => {
     if (basket.length > 0) {
@@ -54,66 +57,108 @@ function Basket() {
     const token = "7182806734:AAESXvxtTJ0P6JOYyUqXgTg-sgDUObi6pTY";
     const chad_id = 6244316872;
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    if (isSend) {
-      axios({
-        url: url,
-        method: "POST",
-        data: {
-          chat_id: chad_id,
-          text: `Someone has bought ${JSON.stringify(basket)}`,
-        },
-      })
-        .then((res) => {
-          toast.success("Successfully");
-        })
-        .catch((error) => {
-          toast.error("Try again");
-        });
-      setBasket([]);
-    } else {
-      toast.error("Buy something");
-    }
+    // if (isSend) {
+    //   axios({
+    //     url: url,
+    //     method: "POST",
+    //     data: {
+    //       chat_id: chad_id,
+    //       text: `Someone has bought ${JSON.stringify(basket)}`,
+    //     },
+    //   })
+    //     .then((res) => {
+    //       toast.success("Successfully");
+    //     })
+    //     .catch((error) => {
+    //       toast.error("Try again");
+    //     });
+    //   setBasket([]);
+    // } else {
+    //   toast.error("Buy something");
+    // }
   };
 
   return (
-    <div className="basket">
-      <div>
-        <h1>Корзина</h1>
-        <p>{lengthProducts}</p>
-      </div>
-      <div className="basketWrapper">
-        {basket.map((product, index) => {
-          return (
-            <div className="basketCard" key={index}>
-              <div>
-                <img src={product.thumbnail} alt="product" />
-                <p>
-                  <span className="productName">{product.title}</span>
-                  <span className="productMass">{product.mass}</span>
-                  <span className="productPrice">{product.price}₽</span>
-                </p>
+    <div className="position">
+      <div
+        className={`basket ${width} ${position}`}
+        onClick={() => {
+          setFlex("flex");
+          setWidth("wideGap");
+          setPosition("absolute");
+        }}
+        style={{ zIndex: 1 }}
+      >
+        <div>
+          <h1>Корзина</h1>
+          <p>{lengthProducts}</p>
+        </div>
+        <div className="basketWrapper" style={{ display: flex }}>
+          {basket.map((product, index) => {
+            return (
+              <div className="basketCard" key={index}>
+                <div>
+                  <img src={product.thumbnail} alt="product" />
+                  <p>
+                    <span className="productName">{product.title}</span>
+                    <span className="productMass">{product.mass}</span>
+                    <span className="productPrice">{product.price}₽</span>
+                  </p>
+                </div>
+                <div>
+                  <button onClick={() => minus(index, product.quantity)}>
+                    -
+                  </button>
+                  <p>{product.quantity}</p>
+                  <button onClick={() => plus(index)}>+</button>
+                </div>
               </div>
-              <div>
-                <button onClick={() => minus(index, product.quantity)}>
-                  -
-                </button>
-                <p>{product.quantity}</p>
-                <button onClick={() => plus(index)}>+</button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <p className="allPrice">
-        <span>Итого</span>
-        <span>{overallPrice}₽</span>
-      </p>
-      <button className="buyButton" onClick={sendProduct}>
-        Оформить заказ
-      </button>
-      <div className="delivery">
-        <img src={delivery} alt="deliver" />
-        <p>Бесплатная доставка</p>
+            );
+          })}
+        </div>
+        {overallPrice > 0 ? (
+          <>
+            <p className="allPrice" style={{ display: flex }}>
+              <span>Итого</span>
+              <span>{overallPrice}₽</span>
+            </p>
+          </>
+        ) : (
+          <p className="empty">Тут пока пусто :(</p>
+        )}
+        {overallPrice > 0 ? (
+          <button
+            className="buyButton"
+            onClick={sendProduct}
+            style={{ display: flex }}
+          >
+            Оформить заказ
+          </button>
+        ) : (
+          ""
+        )}
+        {overallPrice > 0 ? (
+          <div className="delivery" style={{ display: flex }}>
+            <img src={delivery} alt="deliver" />
+            <p>Бесплатная доставка</p>
+            <p
+              className="closeBasket"
+              onClick={(event) => {
+                event.stopPropagation();
+                setFlex("none");
+                setWidth("basket");
+                setPosition("relative");
+                console.log("salom");
+                console.log(flex);
+                console.log(width);
+              }}
+            >
+              Свернуть
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

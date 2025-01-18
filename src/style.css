@@ -17,3 +17,20 @@ main {
   margin-top: calc(50 / 14.4 * 1vw);
   gap: calc(30 / 14.4 * 1vw);
 }
+
+@media only screen and (max-width: 1024px) {
+  main {
+    padding: 0 calc(32 / 10.24 * 1vw);
+    margin-top: calc(50 / 10.24 * 1vw);
+    gap: calc(30 / 10.24 * 1vw);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    padding: 0 calc(64 / 7.68 * 1vw);
+    margin-top: calc(30 / 7.68 * 1vw);
+    gap: calc(30 / 7.68 * 1vw);
+    flex-direction: column;
+  }
+}
