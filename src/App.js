@@ -1,6 +1,5 @@
 import "./style.css";
 import { createContext, useState } from "react";
-// import Child from "./child";
 import Header from "./components/header";
 import Navbar from "./components/navbar";
 import Main from "./components/main";
@@ -64,10 +63,6 @@ function App() {
 
   const addProduct = (product) => {
     setBasket((c) => [...c, product]);
-  };
-
-  const addBasket = (products) => {
-    setBasket(products);
   };
 
   return (

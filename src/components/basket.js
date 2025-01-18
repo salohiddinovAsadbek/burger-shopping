@@ -57,25 +57,25 @@ function Basket() {
     const token = "7182806734:AAESXvxtTJ0P6JOYyUqXgTg-sgDUObi6pTY";
     const chad_id = 6244316872;
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    // if (isSend) {
-    //   axios({
-    //     url: url,
-    //     method: "POST",
-    //     data: {
-    //       chat_id: chad_id,
-    //       text: `Someone has bought ${JSON.stringify(basket)}`,
-    //     },
-    //   })
-    //     .then((res) => {
-    //       toast.success("Successfully");
-    //     })
-    //     .catch((error) => {
-    //       toast.error("Try again");
-    //     });
-    //   setBasket([]);
-    // } else {
-    //   toast.error("Buy something");
-    // }
+    if (isSend) {
+      axios({
+        url: url,
+        method: "POST",
+        data: {
+          chat_id: chad_id,
+          text: `Someone has bought ${JSON.stringify(basket)}`,
+        },
+      })
+        .then((res) => {
+          toast.success("Successfully");
+        })
+        .catch((error) => {
+          toast.error("Try again");
+        });
+      setBasket([]);
+    } else {
+      toast.error("Buy something");
+    }
   };
 
   return (
