@@ -3,14 +3,24 @@ import { useContext } from "react";
 import { DataContext } from "../App";
 
 function Products() {
-  const { burgerData, addProduct, basket } = useContext(DataContext);
+  const { burgerData, addProduct, basket, setBasket } = useContext(DataContext);
 
-  const add = (product) => {
+  const add = (product, raqam) => {
     const isProductExist = [...basket].some(
       (item) => item.title === product.title && item.price === product.price
     );
 
-    isProductExist ? console.log("bor") : addProduct(product);
+    isProductExist
+      ? setBasket((c) => {
+          const updated = [...c];
+          if (updated[raqam]) {
+            updated[raqam].quantity += 1;
+          } else {
+            console.error(`Element ${raqam} mavjud emas.`);
+          }
+          return updated;
+        })
+      : addProduct(product);
   };
 
   return (
@@ -24,9 +34,11 @@ function Products() {
               <p className="productPriceMain">{product.price}₽</p>
               <p className="productTitleMain">{product.title}</p>
               <p className="productMassMain">{product.mass}</p>
-              <button className="addButtonMain" onClick={() => add(product)}>
-                Добавить
-                <p></p>
+              <button
+                className="addButtonMain"
+                onClick={() => add(product, index)}
+              >
+                <span>Добавить</span>
               </button>
             </div>
           );

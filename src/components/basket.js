@@ -2,6 +2,8 @@ import "../assets/basket.css";
 import delivery from "../images/deliver.svg";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../App";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Basket() {
   const { basket, setBasket } = useContext(DataContext);
@@ -47,6 +49,32 @@ function Basket() {
     }
   };
 
+  const sendProduct = () => {
+    const isSend = basket.length > 0 ? true : false;
+    const token = "7182806734:AAESXvxtTJ0P6JOYyUqXgTg-sgDUObi6pTY";
+    const chad_id = 6244316872;
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    if (isSend) {
+      axios({
+        url: url,
+        method: "POST",
+        data: {
+          chat_id: chad_id,
+          text: `Someone has bought ${JSON.stringify(basket)}`,
+        },
+      })
+        .then((res) => {
+          toast.success("Successfully");
+        })
+        .catch((error) => {
+          toast.error("Try again");
+        });
+      setBasket([]);
+    } else {
+      toast.error("Buy something");
+    }
+  };
+
   return (
     <div className="basket">
       <div>
@@ -80,7 +108,9 @@ function Basket() {
         <span>Итого</span>
         <span>{overallPrice}₽</span>
       </p>
-      <button className="buyButton">Оформить заказ</button>
+      <button className="buyButton" onClick={sendProduct}>
+        Оформить заказ
+      </button>
       <div className="delivery">
         <img src={delivery} alt="deliver" />
         <p>Бесплатная доставка</p>

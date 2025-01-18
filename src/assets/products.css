@@ -5,6 +5,7 @@
   border: none;
   border-radius: calc(18 / 14.4 * 1vw);
   padding: calc(12 / 14.4 * 1vw);
+  transition: all 0.2s linear;
 }
 
 .productsWrapperMain {
@@ -73,27 +74,13 @@
   position: relative;
 }
 
-.addButtonMain > p {
-  animation: animatAddButton 3s alternate linear infinite;
-  width: calc(150 / 14.4 * 1vw);
-  background: linear-gradient(
-    to right,
-    rgba(255, 171, 8, 0.3) 0%,
-    /* Boshi shaffof to'q sariq */ rgba(255, 171, 8, 1) 30%,
-    /* O'rtasi to'liq to'q sariq */ rgba(255, 171, 8, 1) 70%,
-    /* O'rtasi to'liq to'q sariq */ rgba(255, 171, 8, 0.3) 100%
-      /* Oxiri shaffof to'q sariq */
-  );
-  height: 100%;
-  position: absolute;
-  left: 0;
+.addButtonMain > span:first-child {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
 }
 
-@keyframes animatAddButton {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(calc(280 / 14.4 * 1vw));
-  }
+.productCardMain:hover {
+  transform: scale(1.1);
 }

@@ -10,6 +10,7 @@ import burger3 from "./images/burger3.svg";
 import burger4 from "./images/burger4.svg";
 import burger5 from "./images/burger5.svg";
 import burger6 from "./images/burger6.svg";
+import { Toaster } from "react-hot-toast";
 
 export const DataContext = createContext();
 
@@ -59,12 +60,6 @@ function App() {
     },
   ];
 
-  const [data, setData] = useState("red");
-
-  const updateData = (newData) => {
-    setData(newData);
-  };
-
   const [basket, setBasket] = useState([]);
 
   const addProduct = (product) => {
@@ -76,12 +71,11 @@ function App() {
   };
 
   return (
-    <DataContext.Provider
-      value={{ data, updateData, burgerData, addProduct, basket, setBasket }}
-    >
+    <DataContext.Provider value={{ burgerData, addProduct, basket, setBasket }}>
       <Header />
       <Navbar />
       <Main />
+      <Toaster />
     </DataContext.Provider>
   );
 }
