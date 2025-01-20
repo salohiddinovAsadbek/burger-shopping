@@ -17,6 +17,7 @@ function Show({ data }) {
         if (item.id === data.id) {
           setQayerda(data.id);
         }
+        return item;
       });
 
       setBasket(
