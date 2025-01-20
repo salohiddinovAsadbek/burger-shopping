@@ -1,9 +1,12 @@
 import "../assets/products.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../App";
 
 function Products() {
-  const { burgerData, addProduct, basket, setBasket } = useContext(DataContext);
+  const { burgerData, addProduct, basket, setBasket, show, showData } =
+    useContext(DataContext);
+  const [isShow, setShow] = useState(false);
+  const [whatShow, setWhatShow] = useState({});
 
   const add = (product, raqam) => {
     const isProductExist = [...basket].some(
@@ -29,14 +32,24 @@ function Products() {
       <div className="productsWrapperMain">
         {burgerData.map((product, index) => {
           return (
-            <div className="productCardMain" key={index}>
+            <div
+              className="productCardMain"
+              key={index}
+              onClick={() => {
+                show();
+                showData(product);
+              }}
+            >
               <img src={product.thumbnail} alt="product" />
               <p className="productPriceMain">{product.price}₽</p>
               <p className="productTitleMain">{product.title}</p>
               <p className="productMassMain">{product.mass}</p>
               <button
                 className="addButtonMain"
-                onClick={() => add(product, index)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  add(product, index);
+                }}
               >
                 <span>Добавить</span>
               </button>

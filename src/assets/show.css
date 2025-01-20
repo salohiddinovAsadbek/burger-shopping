@@ -1,0 +1,141 @@
+.show1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.454);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show {
+  width: calc(684 / 14.4 * 1vw);
+  height: auto;
+  padding: calc(24 / 14.4 * 1vw);
+  border-radius: calc(24 / 14.4 * 1vw);
+  background-color: white;
+}
+
+.show > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.showTitle {
+  font-family: Nunito, sans-serif;
+  font-size: calc(40 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(48 / 14.4 * 1vw);
+}
+
+.showClose {
+  border: none;
+  padding: calc(5 / 14.4 * 1vw);
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(-10 / 14.4 * 1vw);
+}
+
+.showWrapper {
+  display: flex;
+  gap: calc(16 / 14.4 * 1vw);
+  margin-top: calc(24 / 14.4 * 1vw);
+  margin-bottom: calc(40 / 14.4 * 1vw);
+}
+
+.showInfo > p:first-child {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(21 / 14.4 * 1vw);
+}
+
+.showInfo > p:nth-child(2) {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(16 / 14.4 * 1vw);
+  margin-top: calc(10 / 14.4 * 1vw);
+}
+
+.showInfo > p:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2 / 14.4 * 1vw);
+  margin-top: calc(4 / 14.4 * 1vw);
+  margin-bottom: calc(4 / 14.4 * 1vw);
+}
+
+.showInfo > p:nth-child(3) > span {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+}
+
+.showInfo > p:last-child {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: #b1b1b1;
+}
+
+.showForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showForm > div {
+  display: flex;
+  gap: calc(16 / 14.4 * 1vw);
+}
+
+.showAddButton {
+  width: calc(276 / 14.4 * 1vw);
+  height: calc(40 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+  border: none;
+  background-color: #ff7020;
+  color: white;
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  text-align: center;
+}
+
+.addMinusButton {
+  display: flex;
+  gap: calc(18 / 14.4 * 1vw);
+  padding: calc(9 / 14.4 * 1vw) calc(12 / 14.4 * 1vw);
+  background-color: #f2f2f3;
+  border: none;
+  border-radius: calc(12 / 14.4 * 1vw);
+}
+
+.addMinusButton > button {
+  padding: calc(5 / 14.4 * 1vw);
+  border: none;
+  height: 100%;
+  background-color: inherit;
+}
+
+.addMinusButton > p {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(22 / 14.4 * 1vw);
+}
+
+.showPrice {
+  font-family: Nunito, sans-serif;
+  font-size: calc(24 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(31 / 14.4 * 1vw);
+}

@@ -148,9 +148,6 @@ function Basket() {
                 setFlex("none");
                 setWidth("basket");
                 setPosition("relative");
-                console.log("salom");
-                console.log(flex);
-                console.log(width);
               }}
             >
               Свернуть

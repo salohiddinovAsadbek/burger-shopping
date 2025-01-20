@@ -10,6 +10,7 @@ import burger4 from "./images/burger4.svg";
 import burger5 from "./images/burger5.svg";
 import burger6 from "./images/burger6.svg";
 import { Toaster } from "react-hot-toast";
+import Show from "./components/show";
 
 export const DataContext = createContext();
 
@@ -60,16 +61,37 @@ function App() {
   ];
 
   const [basket, setBasket] = useState([]);
+  const [infoShow, setInfoShow] = useState(false);
+  const [dataShow, setDataShow] = useState({});
 
   const addProduct = (product) => {
     setBasket((c) => [...c, product]);
   };
 
+  const show = () => {
+    setInfoShow(!infoShow);
+  };
+
+  const showData = (data) => {
+    setDataShow(data);
+  };
+
   return (
-    <DataContext.Provider value={{ burgerData, addProduct, basket, setBasket }}>
+    <DataContext.Provider
+      value={{
+        burgerData,
+        addProduct,
+        basket,
+        setBasket,
+        infoShow,
+        show,
+        showData,
+      }}
+    >
       <Header />
       <Navbar />
       <Main />
+      {infoShow ? <Show data={dataShow} /> : console.log("showComponent")}
       <Toaster />
     </DataContext.Provider>
   );
