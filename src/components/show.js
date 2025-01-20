@@ -1,12 +1,35 @@
-import burger1 from "../images/burger1.svg";
 import "../assets/show.css";
 import close from "../images/close.svg";
 import { useContext, useState } from "react";
 import { DataContext } from "../App";
 
 function Show({ data }) {
-  const { show, addProduct, basket } = useContext(DataContext);
+  const { show, addProduct, basket, setBasket } = useContext(DataContext);
   const [quantity1, setQuantity] = useState(1);
+  const [qayerda, setQayerda] = useState(-1);
+  console.log(data);
+
+  const check = () => {
+    const isExist = basket.some((item) => item.id === data.id);
+
+    if (isExist) {
+      basket.filter((item) => {
+        if (item.id === data.id) {
+          setQayerda(data.id);
+        }
+      });
+
+      setBasket(
+        basket.map((item, index) =>
+          item.id === qayerda ? { ...item, quantity: item.quantity + 1 } : item
+        )
+      );
+    } else {
+      console.log("yoq");
+      data.quantity = quantity1;
+      addProduct(data);
+    }
+  };
 
   return (
     <div className="show1">
@@ -41,8 +64,7 @@ function Show({ data }) {
             <button
               className="showAddButton"
               onClick={() => {
-                const product = [...basket];
-                addProduct(data);
+                check();
               }}
             >
               Добавить

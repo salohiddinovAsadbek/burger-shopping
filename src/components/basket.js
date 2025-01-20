@@ -94,27 +94,29 @@ function Basket() {
           <p>{lengthProducts}</p>
         </div>
         <div className="basketWrapper" style={{ display: flex }}>
-          {basket.map((product, index) => {
-            return (
-              <div className="basketCard" key={index}>
-                <div>
-                  <img src={product.thumbnail} alt="product" />
-                  <p>
-                    <span className="productName">{product.title}</span>
-                    <span className="productMass">{product.mass}</span>
-                    <span className="productPrice">{product.price}₽</span>
-                  </p>
-                </div>
-                <div>
-                  <button onClick={() => minus(index, product.quantity)}>
-                    -
-                  </button>
-                  <p>{product.quantity}</p>
-                  <button onClick={() => plus(index)}>+</button>
-                </div>
-              </div>
-            );
-          })}
+          {lengthProducts > 0
+            ? basket.map((product, index) => {
+                return (
+                  <div className="basketCard" key={index}>
+                    <div>
+                      <img src={product.thumbnail} alt="product" />
+                      <p>
+                        <span className="productName">{product.title}</span>
+                        <span className="productMass">{product.mass}</span>
+                        <span className="productPrice">{product.price}₽</span>
+                      </p>
+                    </div>
+                    <div>
+                      <button onClick={() => minus(index, product.quantity)}>
+                        -
+                      </button>
+                      <p>{product.quantity}</p>
+                      <button onClick={() => plus(index)}>+</button>
+                    </div>
+                  </div>
+                );
+              })
+            : console.log("basketWrapper")}
         </div>
         {overallPrice > 0 ? (
           <>

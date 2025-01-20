@@ -1,12 +1,12 @@
 import "../assets/products.css";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "../App";
 
 function Products() {
   const { burgerData, addProduct, basket, setBasket, show, showData } =
     useContext(DataContext);
-  const [isShow, setShow] = useState(false);
-  const [whatShow, setWhatShow] = useState({});
+  // const [isShow, setShow] = useState(false);
+  // const [whatShow, setWhatShow] = useState({});
 
   const add = (product, raqam) => {
     const isProductExist = [...basket].some(
