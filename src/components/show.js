@@ -21,7 +21,7 @@ function Show({ data }) {
       });
 
       setBasket(
-        basket.map((item, index) =>
+        basket.map((item) =>
           item.id === qayerda ? { ...item, quantity: item.quantity + 1 } : item
         )
       );
