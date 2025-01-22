@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 111;
 }
 
 .show {
@@ -359,5 +360,120 @@
   .showPrice {
     font-size: calc(16 / 7.68 * 1vw);
     line-height: calc(20 / 7.68 * 1vw);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .show1 {
+    width: 100vw;
+    height: 100vh;
+    align-items: start;
+  }
+
+  .show {
+    width: 100%;
+    padding: calc(10 / 3.2 * 1vw);
+    padding-bottom: calc(32 / 3.2 * 1vw);
+    padding-top: calc(32 / 3.2 * 1vw);
+    border-radius: calc(0 / 3.2 * 1vw);
+  }
+
+  .showTitle {
+    font-size: calc(28 / 3.2 * 1vw);
+    line-height: calc(34 / 3.2 * 1vw);
+  }
+
+  .showClose {
+    padding: calc(5 / 3.2 * 1vw);
+    margin-top: calc(-35 / 3.2 * 1vw);
+  }
+
+  .showClose > img {
+    width: calc(24 / 3.2 * 1vw);
+    height: calc(24 / 3.2 * 1vw);
+  }
+
+  .showWrapper {
+    gap: calc(8 / 3.2 * 1vw);
+    margin-top: calc(16 / 3.2 * 1vw);
+    margin-bottom: calc(24 / 3.2 * 1vw);
+    flex-direction: column;
+  }
+
+  .showWrapper > img {
+    width: calc(300 / 3.2 * 1vw);
+    height: calc(232 / 3.2 * 1vw);
+  }
+
+  .showInfo > p:first-child {
+    font-size: calc(12 / 3.2 * 1vw);
+    line-height: calc(16 / 3.2 * 1vw);
+  }
+
+  .showInfo > p:nth-child(2) {
+    font-size: calc(10 / 3.2 * 1vw);
+    line-height: calc(13 / 3.2 * 1vw);
+    margin-top: calc(10 / 3.2 * 1vw);
+  }
+
+  .showInfo > p:nth-child(3) {
+    gap: calc(2 / 3.2 * 1vw);
+    margin-top: calc(4 / 3.2 * 1vw);
+    margin-bottom: calc(4 / 3.2 * 1vw);
+  }
+
+  .showInfo > p:nth-child(3) > span {
+    font-size: calc(10 / 3.2 * 1vw);
+    line-height: calc(13 / 3.2 * 1vw);
+  }
+
+  .showInfo > p:last-child {
+    font-size: calc(10 / 3.2 * 1vw);
+    line-height: calc(13 / 3.2 * 1vw);
+  }
+
+  .showForm > div {
+    gap: calc(8 / 3.2 * 1vw);
+    height: calc(30 / 3.2 * 1vw);
+  }
+
+  .showForm {
+    flex-direction: column;
+    margin-top: calc(98 / 3.2 * 1vw);
+  }
+
+  .showAddButton {
+    width: calc(218 / 3.2 * 1vw);
+    height: 100%;
+    border-radius: calc(8 / 3.2 * 1vw);
+    font-size: calc(12 / 3.2 * 1vw);
+    line-height: calc(12 / 3.2 * 1vw);
+  }
+
+  .addMinusButton {
+    gap: calc(19 / 3.2 * 1vw);
+    padding: calc(7 / 3.2 * 1vw) calc(8 / 3.2 * 1vw);
+    border-radius: calc(8 / 3.2 * 1vw);
+    height: 100%;
+  }
+
+  .addMinusButton > button {
+    font-size: calc(12 / 3.2 * 1vw);
+    line-height: calc(16 / 3.2 * 1vw);
+  }
+
+  .addMinusButton > p {
+    font-size: calc(12 / 3.2 * 1vw);
+    line-height: calc(16 / 3.2 * 1vw);
+  }
+
+  .showPrice {
+    font-size: calc(16 / 3.2 * 1vw);
+    line-height: calc(21 / 3.2 * 1vw);
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    text-align: end;
+    margin-top: calc(16 / 3.2 * 1vw);
   }
 }

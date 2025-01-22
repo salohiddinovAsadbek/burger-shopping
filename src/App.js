@@ -11,6 +11,7 @@ import burger5 from "./images/burger5.svg";
 import burger6 from "./images/burger6.svg";
 import { Toaster } from "react-hot-toast";
 import Show from "./components/show";
+import Confirm from "./components/confirm";
 
 export const DataContext = createContext();
 
@@ -69,6 +70,7 @@ function App() {
   const [basket, setBasket] = useState([]);
   const [infoShow, setInfoShow] = useState(false);
   const [dataShow, setDataShow] = useState({});
+  // const [confirm, setConfirm] = useState();
 
   const addProduct = (product) => {
     setBasket((c) => [...c, product]);
@@ -98,6 +100,7 @@ function App() {
       <Navbar />
       <Main />
       {infoShow ? <Show data={dataShow} /> : ""}
+      <Confirm />
       <Toaster />
     </DataContext.Provider>
   );

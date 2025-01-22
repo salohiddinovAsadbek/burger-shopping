@@ -1,0 +1,110 @@
+.confirm {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.425);
+  width: 100%;
+  height: 100vh;
+}
+
+.confirmWrapper {
+  width: calc(684 / 14.4 * 1vw);
+  height: auto;
+  display: flex;
+  border: none;
+  border-radius: calc(24 / 14.4 * 1vw) !important;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.confirmWrapper > div {
+  width: 50%;
+}
+
+.confirmWrapper > div:first-child {
+  background-color: #ffab08;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmWrapper > div:first-child > img {
+  width: calc(302 / 14.4 * 1vw);
+  height: calc(302 / 14.4 * 1vw);
+}
+
+.userInfos {
+  padding: calc(24 / 14.4 * 1vw);
+}
+
+.userInfos > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmTitle {
+  font-family: Nunito, sans-serif;
+  font-size: calc(24 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: calc(24 / 14.4 * 1vw);
+}
+
+.closeConfirm > img {
+  width: calc(24 / 14.4 * 1vw);
+  height: calc(24 / 14.4 * 1vw);
+}
+
+.closeConfirm {
+  width: auto;
+  border: none;
+  background-color: inherit;
+  margin-top: calc(-20 / 14.4 * 1vw);
+}
+
+.userInfoInputs {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8 / 14.4 * 1vw);
+  margin-top: calc(16 / 14.4 * 1vw);
+}
+
+.userInfoInputs > input {
+  height: calc(40 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+  border: none;
+  padding-left: calc(12 / 14.4 * 1vw);
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: #b1b1b1;
+}
+
+.selectDelivery {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 / 14.4 * 1vw);
+  margin-top: calc(16 / 14.4 * 1vw);
+}
+
+.selectDelivery > label {
+  display: flex;
+  gap: calc(8 / 14.4 * 1vw);
+  align-items: center;
+}
+
+.selectDelivery > label > input {
+  width: calc(12 / 14.4 * 1vw);
+  height: calc(12 / 14.4 * 1vw);
+  border-radius: 50%;
+}
+
+.selectDelivery > label > p {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+}

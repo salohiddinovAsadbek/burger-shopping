@@ -298,6 +298,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .position {
+    height: calc(48 / 7.68 * 1vw);
+  }
+
   .closeBasket {
     display: flex;
     position: absolute;
@@ -450,6 +454,10 @@
 }
 
 @media only screen and (max-width: 320px) {
+  .position {
+    height: calc(48 / 3.2 * 1vw);
+  }
+
   .closeBasket {
     right: calc(10 / 3.2 * 1vw) !important;
     font-size: calc(10 / 3.2 * 1vw) !important;
