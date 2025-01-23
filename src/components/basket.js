@@ -2,11 +2,9 @@ import "../assets/basket.css";
 import delivery from "../images/deliver.svg";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../App";
-import axios from "axios";
-import toast from "react-hot-toast";
 
 function Basket() {
-  const { basket, setBasket } = useContext(DataContext);
+  const { basket, setBasket, setConfirm } = useContext(DataContext);
   const [lengthProducts, setLengthproducts] = useState(0);
   const [overallPrice, setOverall] = useState(0);
   const [flex, setFlex] = useState("none");
@@ -49,32 +47,6 @@ function Basket() {
         updated.splice(raqam, 1);
         return updated;
       });
-    }
-  };
-
-  const sendProduct = () => {
-    const isSend = basket.length > 0 ? true : false;
-    const token = "7182806734:AAESXvxtTJ0P6JOYyUqXgTg-sgDUObi6pTY";
-    const chad_id = 6244316872;
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    if (isSend) {
-      axios({
-        url: url,
-        method: "POST",
-        data: {
-          chat_id: chad_id,
-          text: `Someone has bought ${JSON.stringify(basket)}`,
-        },
-      })
-        .then((res) => {
-          toast.success("Successfully");
-        })
-        .catch((error) => {
-          toast.error("Try again");
-        });
-      setBasket([]);
-    } else {
-      toast.error("Buy something");
     }
   };
 
@@ -131,8 +103,10 @@ function Basket() {
         {overallPrice > 0 ? (
           <button
             className="buyButton"
-            onClick={sendProduct}
             style={{ display: flex }}
+            onClick={() => {
+              setConfirm(true);
+            }}
           >
             Оформить заказ
           </button>

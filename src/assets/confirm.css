@@ -108,3 +108,65 @@
   font-weight: 400;
   line-height: calc(16 / 14.4 * 1vw);
 }
+
+.additionalData {
+  display: flex;
+  flex-direction: column;
+  gap: calc(32 / 14.4 * 1vw);
+  margin-top: calc(16 / 14.4 * 1vw);
+}
+
+.additionalData > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(8 / 14.4 * 1vw);
+}
+
+.additionalData > div > input {
+  height: calc(40 / 14.4 * 1vw);
+  border: none;
+  border-radius: calc(12 / 14.4 * 1vw);
+  padding-left: calc(12 / 14.4 * 1vw);
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: #b1b1b1;
+}
+
+.additionalData > div > input::placeholder {
+  font-family: Nunito, sans-serif;
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: #b1b1b1;
+}
+
+.additionalData > div > input:first-child {
+  width: 100%;
+}
+
+.additionalData > div > input:nth-child(2) {
+  width: calc(143 / 14.4 * 1vw);
+}
+
+.additionalData > div > input:last-child {
+  width: calc(143 / 14.4 * 1vw);
+}
+
+.confirmButton {
+  width: 100%;
+  height: calc(40 / 14.4 * 1vw);
+  border-radius: calc(12 / 14.4 * 1vw);
+  background-color: #ff7020;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(16 / 14.4 * 1vw);
+  color: white;
+  margin-top: calc(32 / 14.4 * 1vw);
+}

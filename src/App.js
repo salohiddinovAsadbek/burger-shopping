@@ -70,7 +70,7 @@ function App() {
   const [basket, setBasket] = useState([]);
   const [infoShow, setInfoShow] = useState(false);
   const [dataShow, setDataShow] = useState({});
-  // const [confirm, setConfirm] = useState();
+  const [confirm, setConfirm] = useState(false);
 
   const addProduct = (product) => {
     setBasket((c) => [...c, product]);
@@ -93,6 +93,8 @@ function App() {
         setBasket,
         infoShow,
         show,
+        confirm,
+        setConfirm,
         showData,
       }}
     >
