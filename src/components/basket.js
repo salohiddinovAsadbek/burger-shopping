@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../App";
 
 function Basket() {
-  const { basket, setBasket, setConfirm } = useContext(DataContext);
+  const { basket, setBasket, setConfirm, confirm } = useContext(DataContext);
   const [lengthProducts, setLengthproducts] = useState(0);
   const [overallPrice, setOverall] = useState(0);
   const [flex, setFlex] = useState("none");
@@ -49,6 +49,10 @@ function Basket() {
       });
     }
   };
+
+  if (confirm) {
+    return;
+  }
 
   return (
     <div className="position">

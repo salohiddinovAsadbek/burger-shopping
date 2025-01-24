@@ -59,11 +59,15 @@ function Confirm() {
         </div>
         <div className="userInfos">
           <div>
-            <p className="confirmTitle" onClick={() => {}}>
-              Доставка
-            </p>
+            <p className="confirmTitle">Доставка</p>
             <button className="closeConfirm">
-              <img src={close} alt="close" />
+              <img
+                src={close}
+                alt="close"
+                onClick={() => {
+                  setConfirm(false);
+                }}
+              />
             </button>
           </div>
           <div className="userInfoInputs">
