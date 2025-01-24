@@ -179,6 +179,20 @@
   display: none;
 }
 
+.basketCard > button {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(22 / 14.4 * 1vw);
+}
+
+.basketCard > p {
+  font-family: Nunito, sans-serif;
+  font-size: calc(16 / 14.4 * 1vw);
+  font-weight: 400;
+  line-height: calc(22 / 14.4 * 1vw);
+}
+
 @media only screen and (max-width: 1024px) {
   .basket {
     width: calc(300 / 10.24 * 1vw);
@@ -294,6 +308,16 @@
   .empty {
     font-size: calc(16 / 10.24 * 1vw);
     line-height: calc(21 / 10.24 * 1vw);
+  }
+
+  .basketCard > button {
+    font-size: calc(16 / 10.24 * 1vw);
+    line-height: calc(22 / 10.24 * 1vw);
+  }
+
+  .basketCard > p {
+    font-size: calc(16 / 10.24 * 1vw);
+    line-height: calc(22 / 10.24 * 1vw);
   }
 }
 
@@ -451,6 +475,16 @@
   .empty {
     display: none;
   }
+
+  .basketCard > button {
+    font-size: calc(12 / 7.68 * 1vw);
+    line-height: calc(16 / 7.68 * 1vw);
+  }
+
+  .basketCard > p {
+    font-size: calc(12 / 7.68 * 1vw);
+    line-height: calc(16 / 7.68 * 1vw);
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -582,5 +616,15 @@
   .delivery > p {
     font-size: calc(10 / 3.2 * 1vw);
     line-height: calc(13 / 3.2 * 1vw);
+  }
+
+  .basketCard > button {
+    font-size: calc(12 / 3.2 * 1vw);
+    line-height: calc(16 / 3.2 * 1vw);
+  }
+
+  .basketCard > p {
+    font-size: calc(12 / 3.2 * 1vw);
+    line-height: calc(16 / 3.2 * 1vw);
   }
 }
